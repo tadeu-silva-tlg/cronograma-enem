@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cronograma ENEM — Tadeu</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1b1e; --bg2:#122a2e; --panel:#14282c;
+    --ink:#e8f3f1; --ink-dim:#9db3b0;
+    --accent:#3ddc97; --accent-dim:#256b52;
+    --line:#22403f;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f4f8f7; --bg2:#e9f1ef; --panel:#ffffff;
+      --ink:#0d1b1e; --ink-dim:#4c6663;
+      --accent:#0e8f5f; --accent-dim:#bfe8d9;
+      --line:#d6e6e2;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0d1b1e; --bg2:#122a2e; --panel:#14282c;
+    --ink:#e8f3f1; --ink-dim:#9db3b0;
+    --accent:#3ddc97; --accent-dim:#256b52;
+    --line:#22403f;
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Space Grotesk',sans-serif;
+    line-height:1.5;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:28px 20px 60px;}
+  header{margin-bottom:32px;}
+  .tag{font-family:'JetBrains Mono',monospace; color:var(--accent); font-size:13px;}
+  h1{font-size:clamp(28px,7vw,38px); margin:8px 0 6px; line-height:1.15;}
+  .sub{color:var(--ink-dim); font-size:15px; max-width:60ch;}
+
+  .phase{
+    background:var(--panel); border:1px solid var(--line); border-radius:10px;
+    padding:18px 20px; margin-bottom:14px;
+  }
+  .phase h2{font-size:17px; margin:0 0 4px;}
+  .phase .when{font-family:'JetBrains Mono',monospace; color:var(--accent); font-size:12.5px;}
+  .phase p{color:var(--ink-dim); font-size:14.5px; margin:8px 0 0;}
+
+  h2.section{font-size:20px; margin:38px 0 4px;}
+  .lede{color:var(--ink-dim); font-size:14.5px; margin:0 0 16px;}
+
+  table{width:100%; border-collapse:collapse; font-size:14px;}
+  caption{text-align:left; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ink-dim); margin-bottom:6px;}
+  th,td{border:1px solid var(--line); padding:9px 8px; text-align:left; vertical-align:top;}
+  th{background:var(--bg2); font-weight:500; color:var(--ink-dim); font-size:12.5px; font-family:'JetBrains Mono',monospace;}
+  td.time{font-family:'JetBrains Mono',monospace; color:var(--accent); white-space:nowrap; font-size:12.5px;}
+  .scrollbox{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+
+  ul.tips{padding-left:18px; margin:0;}
+  ul.tips li{margin-bottom:10px; color:var(--ink);}
+  ul.tips b{color:var(--accent);}
+
+  .note{
+    border-left:3px solid var(--accent); background:var(--bg2);
+    padding:14px 16px; margin-top:22px; border-radius:0 8px 8px 0;
+    font-size:14.5px; color:var(--ink-dim);
+  }
+  footer{margin-top:40px; color:var(--ink-dim); font-size:12.5px; font-family:'JetBrains Mono',monospace;}
+
+  .subject{
+    background:var(--panel); border:1px solid var(--line); border-radius:10px;
+    padding:16px 18px; margin-bottom:12px;
+  }
+  .subject .day-tag{
+    font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent);
+  }
+  .subject h3{font-size:16px; margin:4px 0 10px;}
+  .subject ol{margin:0; padding-left:20px; font-size:14px; color:var(--ink-dim);}
+  .subject ol li{margin-bottom:5px;}
+  .subject ol li::marker{color:var(--accent); font-family:'JetBrains Mono',monospace;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="tag">plano de estudo · 2 fases</div>
+    <h1>Cronograma para o ENEM</h1>
+    <p class="sub">Feito com base no seu horário do IFS Itabaiana (integral, 7:30–17:30) e no seu objetivo: aprovação em Informática/Cibersegurança no ENEM 2027. O ENEM deste ano entra só como treino — sem pressão de nota.</p>
+  </header>
+
+  <div class="phase">
+    <div class="when">FASE 1 · a partir de 28/set/2026 até o ENEM 2026 (nov)</div>
+    <h2>Rodagem</h2>
+    <p>Objetivo: pegar o jeito da prova, treinar redação do zero e mapear onde você está mais fraco. Nada de decoreba pesada — é diagnóstico. Faça a prova de 2026 relaxado, ela é só experiência.</p>
+  </div>
+  <div class="phase">
+    <div class="when">FASE 2 · dezembro/2026 até o ENEM 2027</div>
+    <h2>Estudo estruturado</h2>
+    <p>Objetivo real. Estudo por área todo dia útil, simulado quinzenal, redação semanal sem falhar. Nos últimos 2 meses antes da prova, mais simulados e revisão dos erros recorrentes.</p>
+  </div>
+
+  <h2 class="section">Sua semana</h2>
+  <p class="lede">Você chega em casa 18:00. Dando meia hora para respirar/jantar, sobra uma janela real de estudo todo dia — e o sábado inteiro livre.</p>
+
+  <div class="scrollbox">
+  <table>
+    <caption>SEG A SEX (fora as aulas do IF, que já estão no seu horário)</caption>
+    <tr><th>Horário</th><th>Bloco</th></tr>
+    <tr><td class="time">18:00–18:45</td><td>Chegada, jantar, descanso</td></tr>
+    <tr><td class="time">18:45–20:45</td><td>Estudo ENEM (2h) — matéria do dia, ver abaixo</td></tr>
+    <tr><td class="time">20:45–21:00</td><td>Revisão rápida do que estudou (fechar o dia)</td></tr>
+    <tr><td class="time">21:00+</td><td>Livre</td></tr>
+  </table>
+  </div>
+
+  <h2 class="section">Matéria e assuntos de cada dia</h2>
+  <p class="lede">Ordem sugerida dentro de cada matéria — vá pro próximo assunto quando já estiver seguro no atual, e faça questões de todos os anteriores como revisão. Quando terminar a lista, volta pro início revisando os pontos que mais errou.</p>
+
+  <div class="subject">
+    <div class="day-tag">SEG · MATEMÁTICA</div>
+    <h3>Ordem de estudo</h3>
+    <ol>
+      <li>Razão, proporção, porcentagem e regra de três</li>
+      <li>Funções do 1º e 2º grau (gráfico e problemas)</li>
+      <li>Progressões aritmética e geométrica</li>
+      <li>Geometria plana (áreas, ângulos, semelhança)</li>
+      <li>Geometria espacial (volumes, prismas, cilindros)</li>
+      <li>Estatística (média, moda, mediana, gráficos) e probabilidade</li>
+      <li>Geometria analítica e trigonometria</li>
+    </ol>
+  </div>
+
+  <div class="subject">
+    <div class="day-tag">TER · LINGUAGENS E CÓDIGOS</div>
+    <h3>Ordem de estudo</h3>
+    <ol>
+      <li>Interpretação de texto e gêneros textuais</li>
+      <li>Coesão, coerência e funções da linguagem</li>
+      <li>Figuras de linguagem e variação linguística</li>
+      <li>Movimentos literários brasileiros (Barroco ao Modernismo)</li>
+      <li>Interpretação de texto em inglês</li>
+      <li>Tecnologias da informação e linguagens digitais</li>
+    </ol>
+  </div>
+
+  <div class="subject">
+    <div class="day-tag">QUA · CIÊNCIAS HUMANAS</div>
+    <h3>Ordem de estudo</h3>
+    <ol>
+      <li>História do Brasil: Colônia, Império e Primeira República</li>
+      <li>História do Brasil: Era Vargas, Ditadura Militar e redemocratização</li>
+      <li>História Geral: Revoluções (Industrial, Francesa), Guerras Mundiais e Guerra Fria</li>
+      <li>Geografia: urbanização, população e globalização</li>
+      <li>Geografia: geopolítica e questões ambientais</li>
+      <li>Filosofia: principais correntes e ética</li>
+      <li>Sociologia: movimentos sociais, cultura e trabalho</li>
+    </ol>
+  </div>
+
+  <div class="subject">
+    <div class="day-tag">QUI · CIÊNCIAS DA NATUREZA</div>
+    <h3>Ordem de estudo</h3>
+    <ol>
+      <li>Física: cinemática e leis de Newton (mecânica)</li>
+      <li>Física: energia, termologia e eletricidade</li>
+      <li>Física: ondulatória e óptica</li>
+      <li>Química: estrutura da matéria e ligações químicas</li>
+      <li>Química: estequiometria e físico-química</li>
+      <li>Química: química orgânica e ambiental</li>
+      <li>Biologia: citologia e genética</li>
+      <li>Biologia: ecologia e fisiologia humana</li>
+    </ol>
+  </div>
+
+  <div class="subject">
+    <div class="day-tag">SEX · REDAÇÃO</div>
+    <h3>Ordem de estudo</h3>
+    <ol>
+      <li>Estrutura do texto dissertativo-argumentativo (introdução, desenvolvimento, conclusão)</li>
+      <li>Construção de repertório sociocultural (ler sobre temas atuais)</li>
+      <li>Proposta de intervenção (os 5 elementos cobrados na correção)</li>
+      <li>Prática: um tema por semana, alternando entre educação, meio ambiente, tecnologia, saúde e direitos humanos</li>
+    </ol>
+  </div>
+
+  <div class="scrollbox">
+  <table>
+    <caption>SÁBADO</caption>
+    <tr><th>Horário</th><th>Bloco</th></tr>
+    <tr><td class="time">manhã</td><td>Livre — descanso de verdade, você já teve semana cheia</td></tr>
+    <tr><td class="time">14:00–17:30</td><td>Simulado em semanas alternadas (60 questões cronometradas) OU revisão geral da semana + banco de questões; a cada 2 sábados, uma redação completa em 1h</td></tr>
+  </table>
+  </div>
+
+  <div class="scrollbox">
+  <table>
+    <caption>DOMINGO</caption>
+    <tr><th>Horário</th><th>Bloco</th></tr>
+    <tr><td class="time">até a tarde</td><td>Livre</td></tr>
+    <tr><td class="time">19:00–20:00</td><td>Opcional: revisar erros do simulado/questões da semana</td></tr>
+  </table>
+  </div>
+
+  <h2 class="section">Como estudar, não só quando</h2>
+  <ul class="tips">
+    <li><b>Questão antes de teoria.</b> Você nunca fez ENEM — comece resolvendo provas antigas (mesmo errando tudo) pra entender o estilo da pergunta, depois estude o que faltou.</li>
+    <li><b>Redação toda semana, sem exceção.</b> É a competência que mais evolui com repetição e a que você mais atrasada tem (1 feita até agora). Peça correção de um professor do IF sempre que der.</li>
+    <li><b>Revisão espaçada.</b> O bloco de "fechar o dia" (20:45–21:00) é pra isso: reveja rapidamente o que estudou há 1 dia, 1 semana e 1 mês atrás, não só o de hoje.</li>
+    <li><b>Aproveite o que já é seu curso.</b> Lógica de Programação, Redes e Noções de Eletrônica já estão no seu horário do IF — isso é vantagem real pra área de cibersegurança depois. Não precisa duplicar isso no cronograma do ENEM.</li>
+    <li><b>2h de foco &gt; 4h distraído.</b> Celular fora da mesa no bloco da noite. Se quiser, use pomodoro (25min foco / 5min pausa) dentro das 2h.</li>
+  </ul>
+
+  <div class="note">
+    Isso é ponto de partida, não lei. Se numa semana a matéria do dia estiver pesada demais, ou o simulado do sábado não render, ajuste — o que importa é manter os blocos acontecendo, mesmo que menores, até o ENEM 2027.
+  </div>
+
+  <footer>cronograma · início 28/set/2026 · meta ENEM 2027</footer>
+</div>
+</body>
+</html>
